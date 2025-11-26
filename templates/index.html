@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exoplanets</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Exoplanets</h1>
+    <div class="card-container">
+        {% for planet in planets %}
+        <a href="{{ url_for('planet_detail', name=planet['pl_name']) }}" class="card">
+            <h2>{{ planet['pl_name'] }}</h2>
+            <p>Orbital Period: {{ planet['pl_orbper'] or 'Unknown' }}</p>
+            <p>Radius: {{ planet['pl_rade'] or 'Unknown' }} Earths</p>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ planet['pl_name'] }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <a href="/">← Back</a>
+    <h1>{{ planet['pl_name'] }}</h1>
+    <ul>
+        <li>Mass: {{ planet['pl_bmasse'] or 'Unknown' }} Earth masses</li>
+        <li>Orbital Period: {{ planet['pl_orbper'] or 'Unknown' }}</li>
+        <li>Radius: {{ planet['pl_rade'] or 'Unknown' }}</li>
+        <li>Temperature: {{ planet['pl_eqt'] or 'Unknown' }} K</li>
+        <li>Discovery Year: {{ planet['disc_year'] or 'Unknown' }}</li>
+    </ul>
+	<h2>Comparison with Earth</h2>
+	<img src="{{ url_for('static', filename='plots/' + name + '_planet_comparison.png') }}" alt="Planet Comparison">
+	<h2>Comparison with the Sun</h2>
+	<img src="{{ url_for('static', filename='plots/' + name + '_star_comparison.png') }}" alt="Star Comparison">
+</body>
+</html> 
